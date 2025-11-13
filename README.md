@@ -151,18 +151,4 @@ python -m server.app
 
 ````
 
----
 
-✅ **How to use:**
-- Copy everything above  
-- Paste into your `README.md` file in the root of your repo (`VisionGuard-AI/README.md`)  
-- Then run:
-  ```bash
-  git add README.md
-  git commit -m "Added structured README with setup and features"
-  git push origin main
-````
-
----
-
-Would you like me to add **badges** (Python version, Flask, OpenCV, License, etc.) at the top — like a professional GitHub project header?
