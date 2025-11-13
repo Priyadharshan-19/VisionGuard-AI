@@ -1,8 +1,3 @@
-Got it ✅ — you want your **VisionGuard-AI** project to have a **README style just like your Flood Detection one** (with emojis, sections, structure, and a clean layout).
-
-Here’s your **ready-to-copy version** of the `README.md` for **VisionGuard-AI**, formatted exactly like that 👇
-
----
 
 ```markdown
 # 🧠 VisionGuard-AI: Adversarial Attack Detection with GenAI Insights 🔒💡
