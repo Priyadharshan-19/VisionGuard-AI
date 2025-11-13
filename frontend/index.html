@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>VisionGuard AI — Adversarial Detection</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar glass">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="logo" class="logo" onerror="this.style.display='none'">
+      <div>
+        <div class="app-title">VisionGuard · Live Demo</div>
+        <div class="app-sub">AI-Powered Adversarial Detection + GenAI Insights</div>
+      </div>
+    </div>
+    <div class="right-meta">
+      <div class="meta-item">Mode: <strong>Demo</strong></div>
+      <div class="meta-item">Server: <span id="server_addr">127.0.0.1:5000</span></div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="streams">
+      <div class="panel fade-in">
+        <div class="panel-head">
+          <h4>Normal Detection</h4>
+          <div class="badge">Baseline</div>
+        </div>
+        <div class="video-wrap">
+          <img id="left_stream" src="http://127.0.0.1:5000/left_stream" alt="left stream" />
+        </div>
+        <div class="panel-footer">
+          <div id="left_meta" class="meta small">Label: <span class="val">—</span> Confidence: <span class="val">—</span></div>
+          <a id="left_img_link" class="small link" href="/captured_frames/left_latest.jpg" target="_blank">Open annotated</a>
+        </div>
+      </div>
+
+      <div class="panel fade-in delay-1">
+        <div class="panel-head">
+          <h4>Adversarial Detection</h4>
+          <div class="badge danger">Adversarial</div>
+        </div>
+        <div class="video-wrap">
+          <img id="right_stream" src="http://127.0.0.1:5000/right_stream" alt="right stream" />
+        </div>
+        <div class="panel-footer">
+          <div id="right_meta" class="meta small">Adv score: <span class="val">—</span> Flag: <span class="val">—</span></div>
+          <a id="right_img_link" class="small link" href="/captured_frames/right_latest.jpg" target="_blank">Open annotated</a>
+        </div>
+      </div>
+    </section>
+
+    <aside class="insights fade-in delay-2">
+      <div class="insights-card glass-card">
+        <div class="insights-head">
+          <div>
+            <h3>GenAI Insights</h3>
+            <p class="muted">Ask VisionGuard about detections, threats, or next steps.</p>
+          </div>
+          <div class="llm-status">
+            <span id="llm_badge" class="llm idle">LLM: idle</span>
+          </div>
+        </div>
+
+        <textarea id="user_question" placeholder="Ex: Why was this image flagged as adversarial?" rows="3"></textarea>
+
+        <div class="controls">
+          <button id="ask_btn" class="btn glow primary">Ask AI</button>
+          <button id="copy_status" class="btn ghost">Copy Status</button>
+          <div id="spinner" class="spinner" hidden></div>
+        </div>
+
+        <div class="response-grid">
+          <div class="response-box">
+            <div class="response-title">Summary</div>
+            <div id="resp_summary" class="response-body">-</div>
+          </div>
+          <div class="response-box">
+            <div class="response-title">Risk</div>
+            <div id="resp_risk" class="response-body">-</div>
+          </div>
+          <div class="response-box full">
+            <div class="response-title">Suggestion</div>
+            <div id="resp_suggestion" class="response-body">-</div>
+          </div>
+        </div>
+
+        <div class="history">
+          <details>
+            <summary>Conversation Log</summary>
+            <div id="history_log" class="history-log">No queries yet.</div>
+          </details>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer glass">
+    <div>© VisionGuard AI — Demo Interface</div>
+    <div class="muted">Powered by <strong>Phi-3-mini-4k-instruct</strong> via LM Studio</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
