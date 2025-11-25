@@ -1,5 +1,3 @@
-Here is your **perfectly aligned, clean post** with the **Tech Stack moved to the top** and removed from the bottom — formatted for LinkedIn.
-
 ---
 
 # 🧠 VisionGuard-AI: Adversarial Attack Detection with GenAI Insights 🔒💡
@@ -146,10 +144,3 @@ python -m server.app
 ✨ **VisionGuard-AI — Secure, Explainable, and Intelligent Adversarial Defense System.**
 
 ---
-
-If you want, I can also generate:
-🔹 A shorter LinkedIn-friendly version
-🔹 A carousel-style slide version
-🔹 High-reach hashtags
-
-Just tell me!
